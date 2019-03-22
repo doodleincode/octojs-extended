@@ -1,38 +1,48 @@
 {
-  "name": "@octopusdeploy/octopackjs",
+  "name": "octojs-extended",
   "version": "0.2.0",
-  "description": "A nodejs tool for packaging and pushing projects to an Octopus Deploy instance.",
-  "main": "index.js",
-  "scripts": {
-    "test": "\"\"node_modules/.bin/mocha\"\" -R spec",
-    "test-teamcity": "\"\"node_modules/.bin/mocha\"\" -R spec --reporter mocha-teamcity-reporter",
-    "version-teamcity": "node -e \"console.log('##teamcity[buildNumber \\''+ require('./package.json').version +'\\']')\""
-  },
+  "description": "A nodejs cli tool for packaging and pushing projects to an Octopus Deploy instance.",
+  "author": "Daniel Hong",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/OctopusDeploy/octopackjs"
+    "url": "git@github.com:doodleincode/octojs-extended.git"
   },
-  "keywords": [
-    "octopus",
-    "deploy",
-    "octo",
-    "package"
-  ],
-  "author": "Octopus Deploy <support@octopus.com> (http://octopus.com/)",
-  "license": "Apache-2.0",
-  "devDependencies": {
-    "chai": "^4.1.0",
-    "mocha": "^5.2.0",
-    "mocha-teamcity-reporter": "^2.5.1",
-    "sinon": "^7.1.1"
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha -R spec tests/**/*.js"
   },
+  "bin": {
+    "octojs": "./bin/octojs.js"
+  },
+  "main": "index.js",
   "dependencies": {
     "archiver": "^2.1.1",
-    "archiver-utils": "^1.0.0",
+    "commander": "^2.15.1",
+    "globby": "^8.0.1",
     "is-glob": "^4.0.0",
-    "request": "^2.88.0",
-    "stream-to-buffer": "^0.1.0",
-    "xml-writer": "^1.6.0",
-    "zip-stream": "^1.2.0"
-  }
+    "parse-gitignore": "^0.4.0",
+    "request": "^2.83.0",
+    "semver": "^5.5.0",
+    "stream-to-buffer": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1",
+    "sinon": "^4.4.2"
+  },
+  "bugs": {
+    "url": "https://github.com/doodleincode/octojs-extended/issues"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "homepage": "https://github.com/doodleincode/octojs-extended",
+  "keywords": [
+    "archive",
+    "deploy",
+    "octo",
+    "octopus",
+    "package",
+    "zip"
+  ]
 }

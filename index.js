@@ -1,6 +1,1 @@
-'use strict';
-
-module.exports = {
-	pack: require('./lib/pack.js'),
-	push: require('./lib/push.js')
-};
+module.exports = require("./lib");
